@@ -10,7 +10,7 @@ public class Problem4Test {
     @Test
     public void winterIsComingYesTest() {
         String expected = "YES";
-        String actual = problem4.winterIsComing("aaabbbb");
+        String actual = problem4.winterIsComing("aaaabbbb");
         Assert.assertEquals(expected,actual);
     }
 

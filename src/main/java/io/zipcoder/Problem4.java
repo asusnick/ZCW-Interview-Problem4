@@ -36,23 +36,22 @@ public class Problem4 {
     //better, different way to solve below
     public String winterIsComing(String input) {
         ArrayList<Character> distinctLetters = getDistinctLetters(input);
-        if (input.length() % 2 == 0) {
-            for (Character character : distinctLetters) {
-                if (character % 2 != 0) {
-                    return "NO";
+        int oddGroups = 0;
+        for(int i = 0; i < distinctLetters.size(); i++){
+            int count = 0;
+            for(int j = 0; j < input.length(); j++){
+                if(distinctLetters.get(i) == input.charAt(j)) {
+                    count++;
                 }
             }
-            return "YES";
+            if(count % 2 != 0){
+                oddGroups++;
+            }
+        }
+        if(oddGroups > 1){
+            return "NO";
         }
         else {
-            int x = 0;
-            for (Character character : distinctLetters) {
-                if (character % 2 != 0 && x < 1) {
-                    x++;
-                } else if (character % 2 != 0) {
-                    return "NO";
-                }
-            }
             return "YES";
         }
     }
